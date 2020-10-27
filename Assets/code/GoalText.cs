@@ -4,11 +4,12 @@ public class GoalText : MonoBehaviour
 {
     
     public Transform player;
-    public MeshRenderer meshRenderer;
+    public MeshRenderer meshRendererLost;
+    public MeshRenderer meshRendererSuccess;
 
     void Start()
     {
-        meshRenderer.enabled = false;
+        meshRendererSuccess.enabled = false;
     }
 
     void Update()
@@ -16,7 +17,8 @@ public class GoalText : MonoBehaviour
         if (player.position.z > 250) {
             Debug.Log("You are winner");
 
-            meshRenderer.enabled = true;
+            meshRendererSuccess.enabled = true;
+            meshRendererLost.enabled = false;
         }
     }
 }
